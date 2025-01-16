@@ -1,14 +1,20 @@
-FROM ubuntu:20.04
+# Use the official Node.js image as the base image
+FROM node:14
 
-# 必要なパッケージのインストール
-RUN apt-get update && apt-get install -y \
-    git \
-    # プロジェクトに必要な他のパッケージ
-    # プロジェクトのコピー
-    COPY C:\Users\synth\OneDrive\デスクトップ\js_learn
+# Set the working directory
 WORKDIR C:\Users\synth\OneDrive\デスクトップ\js_learn
 
-# 必要に応じて環境設定やビルドコマンドを追加
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# コンテナ起動時のコマンド
-CMD ["/bin/bash"]
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the application
+CMD ["node", "app.js"]
