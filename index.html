@@ -9,11 +9,21 @@
 
 <body>
     <h1>ビジネス本構文生成機</h1>
-    <p>Please enter A, B, C, D.</p>
+    <p>「AはBがないと破綻するというがそれは甘えである。本来はCのみあれば成立するのでAの九割はDである」</p>
+    <p>A, B, C, Dをそれぞれ入力してください</p>
 
     <ul>
-        <label for="name">Name (4 to 8 characters):</label>
-        <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+        <label>A<br></label>
+        <input type="text" id="A" required size="10" />
+
+        <label><br>B<br></label>
+        <input type="text" id="B" required size="10" />
+
+        <label><br>C<br></label>
+        <input type="text" id="C" required size="10" />
+
+        <label><br>D<br></label>
+        <input type="text" id="D" required size="10" />
     </ul>
 </body>
 
