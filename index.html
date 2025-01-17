@@ -12,18 +12,18 @@
     <p>「AはBがないと破綻するというがそれは甘えである。本来はCのみあれば成立するのでAの九割はDである」</p>
     <p>A, B, C, Dをそれぞれ入力してください</p>
 
-    <form action="result.php" method="post">
+    <form>
         <p>
-            <label>A：<input type="text" name="A"></label>
+            <label>A：<input type="text" id="A" name="A"></label>
         </p>
         <p>
-            <label>B：<input type="text" name="B"></label>
+            <label>B：<input type="text" id="B" name="B"></label>
         </p>
         <p>
-            <label>C：<input type="text" name="C"></label>
+            <label>C：<input type="text" id="C" name="C"></label>
         </p>
         <p>
-            <label>D：<input type="text" name="D"></label>
+            <label>D：<input type="text" id="D" name="D"></label>
         </p>
         <p>
             <input type="button" value="生成" id="checkButton">
@@ -33,27 +33,18 @@
 
         <script>
             function buttonClick() {
-                msg.innerText = a.value + 'は' + b.value + 'がないと破綻するというがそれは甘えである。本来は' + c.value + 'のみあれば成立するので' + a.value + 'の九割は' + d.value + 'である」';
+                const a = document.getElementById('A').value;
+                const b = document.getElementById('B').value;
+                const c = document.getElementById('C').value;
+                const d = document.getElementById('D').value;
+
+                const msg = document.getElementById('msg');
+                msg.innerText = `${a}は${b}がないと破綻するというがそれは甘えである。本来は${c}のみあれば成立するので${a}の九割は${d}である。`;
             }
 
-            let a = document.getElementById('A');
-            a.value = 'a';
-
-            let b = document.getElementById('B');
-            a.value = 'b';
-
-            let c = document.getElementById('C');
-            a.value = 'c';
-
-            let d = document.getElementById('D');
-            a.value = 'd';
-
-            let msg = document.getElementById('msg');
-
-            let checkButton = document.getElementById('checkButton');
-            checkButton.addEventListener('click', buttonClick);
+            document.getElementById('checkButton').addEventListener('click', buttonClick);
         </script>
-
+    </form>
 </body>
 
 </html>
