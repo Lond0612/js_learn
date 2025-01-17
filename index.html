@@ -25,6 +25,15 @@
         <label><br>D<br></label>
         <input type="text" id="D" required size="10" />
     </ul>
+
+    <script>
+        let a = document.getElementById('A');
+        let b = document.getElementById('B');
+        let c = document.getElementById('C');
+        let d = document.getElementById('D');
+
+        document.write('<p>' + a.value + 'は' + b.value + 'がないと破綻するというがそれは甘えである。本来は' + c.value + 'のみあれば成立するので' + a.value + 'の九割は' + d.value + 'である</p>');
+    </script>
 </body>
 
 </html>
