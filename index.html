@@ -26,7 +26,7 @@
             <label>D：<input type="text" name="D"></label>
         </p>
         <p>
-            <input type="submit" value="生成">
+            <input type="button" value="生成" id="checkButton">
         </p>
 
         <p id="msg"></p>
@@ -36,8 +36,18 @@
                 msg.innerText = a.value + 'は' + b.value + 'がないと破綻するというがそれは甘えである。本来は' + c.value + 'のみあれば成立するので' + a.value + 'の九割は' + d.value + 'である」';
             }
 
-            let nameText = document.getElementById('nameText');
-            nameText.value = '名前';
+            let a = document.getElementById('A');
+            a.value = 'a';
+
+            let b = document.getElementById('B');
+            a.value = 'b';
+
+            let c = document.getElementById('C');
+            a.value = 'c';
+
+            let d = document.getElementById('D');
+            a.value = 'd';
+
             let msg = document.getElementById('msg');
 
             let checkButton = document.getElementById('checkButton');
