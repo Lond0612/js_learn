@@ -12,28 +12,38 @@
     <p>「AはBがないと破綻するというがそれは甘えである。本来はCのみあれば成立するのでAの九割はDである」</p>
     <p>A, B, C, Dをそれぞれ入力してください</p>
 
-    <ul>
-        <label>A<br></label>
-        <input type="text" id="A" required size="10" />
+    <form action="result.php" method="post">
+        <p>
+            <label>A：<input type="text" name="A"></label>
+        </p>
+        <p>
+            <label>B：<input type="text" name="B"></label>
+        </p>
+        <p>
+            <label>C：<input type="text" name="C"></label>
+        </p>
+        <p>
+            <label>D：<input type="text" name="D"></label>
+        </p>
+        <p>
+            <input type="submit" value="生成">
+        </p>
 
-        <label><br>B<br></label>
-        <input type="text" id="B" required size="10" />
+        <p id="msg"></p>
 
-        <label><br>C<br></label>
-        <input type="text" id="C" required size="10" />
+        <script>
+            function buttonClick() {
+                msg.innerText = a.value + 'は' + b.value + 'がないと破綻するというがそれは甘えである。本来は' + c.value + 'のみあれば成立するので' + a.value + 'の九割は' + d.value + 'である」';
+            }
 
-        <label><br>D<br></label>
-        <input type="text" id="D" required size="10" />
-    </ul>
+            let nameText = document.getElementById('nameText');
+            nameText.value = '名前';
+            let msg = document.getElementById('msg');
 
-    <script>
-        let a = document.getElementById('A');
-        let b = document.getElementById('B');
-        let c = document.getElementById('C');
-        let d = document.getElementById('D');
+            let checkButton = document.getElementById('checkButton');
+            checkButton.addEventListener('click', buttonClick);
+        </script>
 
-        document.write('<p>' + a.value + 'は' + b.value + 'がないと破綻するというがそれは甘えである。本来は' + c.value + 'のみあれば成立するので' + a.value + 'の九割は' + d.value + 'である</p>');
-    </script>
 </body>
 
 </html>
